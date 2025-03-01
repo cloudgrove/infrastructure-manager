@@ -5,4 +5,4 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./src:${DOCKER_PROJECT_DIR}
+      - .:/data/${DOCKER_PROJECT_DIR}

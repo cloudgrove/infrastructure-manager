@@ -52,10 +52,20 @@ workflows:
       - push_and_deploy:
           context:
             - main
+            - beta
           requires:
             - test_and_build
           filters:
             branches:
               only:
                 - develop
+      - push_and_deploy:
+          context:
+            - main
+            - prod
+          requires:
+            - test_and_build
+          filters:
+            branches:
+              only:
                 - master

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GITHUB_BASE_URI=$([ ! -z "${GITHUB_ACCESS_TOKEN}" ] && echo "https://${GITHUB_ACCESS_TOKEN}@github.com/${GITHUB_ORG}" || echo "git@github.com:${GITHUB_ORG}")
+GITHUB_BASE_URI=$([ ! -z "${GITHUB_ACCESS_TOKEN}" ] && echo "https://${GITHUB_ACCESS_TOKEN}@github.com/${BUILD_SCRIPTS_GITHUB_ORG}" || echo "git@github.com:${BUILD_SCRIPTS_GITHUB_ORG}")
 PROJECT_DIR=$(git rev-parse --show-toplevel)
 PROJECT_ENV_FILE=${PROJECT_DIR}/project.env
 DOWNLOADS_DIR=${PROJECT_DIR}/scripts/downloads

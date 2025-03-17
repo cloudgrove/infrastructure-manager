@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:1.3.7 AS base
+FROM hashicorp/terraform:1.11.2 AS base
 ARG DOCKER_PROJECT_DIR
 ARG TFC_TOKEN
 ARG SET_TF_WORKSPACE
@@ -11,4 +11,3 @@ RUN apk add --update bash git findutils make openrc tree
 WORKDIR $PROJECT_DIR
 COPY . ./
 RUN make test package
-CMD tail -f /dev/null

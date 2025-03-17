@@ -1,27 +1,11 @@
 # About this repo
-This repo is the backbone of every new project. Please take the time to understand its scaffolding.
+This repo hosts the Terraform code responsible for provisioning cloud resources.
 
-```
-├── Makefile         # Make commands such as test, build, push, and deploy
-├── project.env      # Shell vars, such as `PROJECT_TYPE`, used by Makefile and scripts
-├── README.md        # Information on this repo
-├── .gitignore
-├── .circleci
-│   └── config.yml   # CircleCI config file
-└── scripts
-│   ├── prepare.sh   # Script for setting up the project with useful scripts
-│   └── ...          # Other scripts as needed
-└── src              # Project main source code
-    └── ...
-```
+It leverages the `aws-soaman` module to provision SOA-related resources, such as VPCs, subnets, load balancers, ECS services, RDS instances, SQS queues, etc.
 
-# Before you start developing
-Please follow these steps as soon as the repo is created:
+# CI/CD
+The current CI/CD (via CircleCI), which invokes the command `make clean build`, will automatically create the following workspaces in Terraform Cloud:
+- `infrastructure-manager-beta` (when building the `develop` branch)
+- `infrastructure-manager-prod` (when building the `master` branch)
 
-1. Go to `project.env` and specify the project type.
-
-1. Add the necessary dependencies and package installations in `Dockerfile`.
-
-1. Expand the `docker-compose` config to include other services (like Redis, Postgres, etc) and components (like mounted volumes, port mappings, etc) on which your code depends.
-
-1. Know that `docker` is installed inside the `builder` Docker image in order to run (within the Docker container) integration tests that depend on containerized servers and datastores.
+Given the `backend.tf` file, the execution of the Terraform plan can be performed remotely (in Terraform Cloud) or locally (i.e. your machine or CircleCI), according to your setting in TFC, but the state file will always reside in Terraform Cloud. If you want the state file to stay local, delete the `backend.tf` file.

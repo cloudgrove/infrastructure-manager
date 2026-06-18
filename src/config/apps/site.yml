@@ -1,3 +1,4 @@
 name: site
 subdomain: site
 path: /apps/site/current
+masked_env: prod

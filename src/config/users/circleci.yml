@@ -14,6 +14,7 @@ statements:
   - sid: DeployToECS
     effect: Allow
     actions:
+      - ecs:ListServices
       - ecs:UpdateService
     resources:
       - '*'
@@ -22,6 +23,7 @@ statements:
     actions:
       - s3:ListBucket
       - s3:GetObject
+      - s3:GetObjectTagging
       - s3:PutObject
       - s3:DeleteObject
     resources:

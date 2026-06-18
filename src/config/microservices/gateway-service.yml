@@ -21,7 +21,7 @@ config:
       AWS_S3_BUCKET_FOR_PUBLIC_CONTENT: &pc_bucket cloudgrove.${env}.public-assets
       POSTGRES_HOST: gateway-service-postgres.master
       POSTGRES_USERNAME: root
-      POSTGRES_PASSWORD: &default_pg_pass kms_AQICAHjYdH1UxKqA9GWR7DagdD0uKERhRQZZkDpVM4wEn2l/gQHRh+zGk2Gg+aF8pXibLn3IAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMffBhCZjMsGx3WJIgAgEQgCP9tPye94Rh9itGgWxNLcuVovdu6mLrrJIBsTDpkhBK633xiA==
+      POSTGRES_PASSWORD: &default_pg_pass kms_AQICAHgr5YA+klVg1XnV0xT/q0VHCXKBXhJYobW9H52KSHxpeQH7BbsANFb3pW5YGXWvBApSAAAAZDBiBgkqhkiG9w0BBwagVTBTAgEAME4GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMy11xyiPrPXwq2rgRAgEQgCGUDf6CEj1y/M9DTIZgOs1s2pisI0JdFJMJNZk9mLdj8LM=
       POSTGRES_DATABASE: main
     resources:
       efs:

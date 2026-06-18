@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:1.11.2 AS base
+FROM hashicorp/terraform:1.12.31 AS base
 ARG DOCKER_PROJECT_DIR
 ARG TFC_TOKEN
 ARG SET_TF_WORKSPACE

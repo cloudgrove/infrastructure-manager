@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.11.2"
+  required_version = "~> 1.12.1"
 
   required_providers {
     aws = {
@@ -10,7 +10,6 @@ terraform {
 }
 
 provider "aws" {
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
-  region     = var.aws_region
+  # AWS credentials are automatically loaded from the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, or from the ~/.aws/credentials file.
+  region = var.aws_region
 }

@@ -1,16 +1,3 @@
-variable "aws_access_key" {
-  description = "The AWS access key"
-  type        = string
-  default     = ""
-}
-
-variable "aws_secret_key" {
-  description = "The AWS secret key"
-  type        = string
-  default     = ""
-  sensitive   = true
-}
-
 variable "aws_region" {
   description = "The target AWS region"
   type        = string
@@ -59,6 +46,18 @@ variable "vpn_dev_password" {
   default     = "inject in TF_VAR_vpn_dev_password or add as a TFC var"
   type        = string
   sensitive   = true
+}
+
+variable "vpn_instance_ami" {
+  description = "The ID of the EC2 AMI to be used for the VPN server"
+  type        = string
+  default     = "ami-080e1f13689e07408"
+}
+
+variable "vpn_instance_type" {
+  description = "The type of EC2 instance to be used for the VPN server"
+  type        = string
+  default     = "t3.micro"
 }
 
 variable "vpn_subdomain_prefix" {
